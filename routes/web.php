@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
+
 Route::get('/', function () {
     return view('welcome');
 });
-=======
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -33,4 +33,3 @@ Route::get('/hello', 'App\Http\Controllers\HelloController@index');
 //     Route::get('/sample', 'SampleController@index');
 //     Route::get('/sample/other', 'SampleController@other');
 // });
->>>>>>> origin/main
