@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\HelloMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Route::get('/', function () {
-//     return view('welcome');
-// });
+//     return view('index');
+// });　
 
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+Route::get('hello', 'App\Http\Controllers\HelloController@index' );
+Route::post('hello', 'App\Http\Controllers\HelloController@post');
 
-// Route::middleware([App\Http\Middleware\HelloMiddleware::class])->group(function() {
-//     Route::get('/hello', 'App\Http\Controllers\HelloController@index');
-//     Route::get('/hello/other', 'App\Http\Controllers\HelloController@other');
-// });
+// Route::get('hello', 'App\Http\Controllers\HelloController@index')->middleware(HelloMiddleware::class);
 
-// Route::namespace('App\Http\Controllers\Sample')->group(function() {
-//     Route::get('/sample', 'SampleController@index');
-//     Route::get('/sample/other', 'SampleController@other');
-// });
